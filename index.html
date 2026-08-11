@@ -1,0 +1,506 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobBoard - Find Your Next Job</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        /* Navigation */
+        nav {
+            background: #172554;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        /* Hero */
+        .hero {
+            background: #2563eb;
+            color: white;
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            background: white;
+            max-width: 900px;
+            margin: auto;
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input,
+        .search-box select {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .search-box button {
+            background: #172554;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .search-box button:hover {
+            background: #0f172a;
+        }
+
+        /* Jobs */
+        .jobs-section {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .jobs-section h2 {
+            margin-bottom: 25px;
+        }
+
+        .jobs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .job-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .job-card h3 {
+            color: #172554;
+            margin-bottom: 10px;
+        }
+
+        .company {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .location {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            margin: 15px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #1e3a8a;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        .salary {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .apply {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .apply:hover {
+            background: #1d4ed8;
+        }
+
+        /* Footer */
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        /* Mobile */
+        @media (max-width: 800px) {
+            .jobs {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h1>JobBoard</h1>
+
+        <div>
+            <a href="#">Home</a>
+            <a href="#jobs">Jobs</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <h2>Find Your Next Opportunity</h2>
+
+        <p>
+            Discover jobs, internships and career opportunities.
+        </p>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Job title or keyword"
+            >
+
+            <select id="locationFilter">
+                <option value="">All Locations</option>
+                <option value="Johannesburg">Johannesburg</option>
+                <option value="Cape Town">Cape Town</option>
+                <option value="Pretoria">Pretoria</option>
+                <option value="Durban">Durban</option>
+            </select>
+
+            <button onclick="searchJobs()">
+                Search Jobs
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Jobs -->
+    <section class="jobs-section" id="jobs">
+
+        <h2>Latest Jobs</h2>
+
+        <div class="jobs" id="jobList">
+
+            <!-- Job 1 -->
+            <div
+                class="job-card"
+                data-title="Junior Web Developer"
+                data-location="Johannesburg"
+            >
+
+                <h3>Junior Web Developer</h3>
+
+                <p class="company">
+                    ABC Technologies
+                </p>
+
+                <p class="location">
+                    📍 Johannesburg
+                </p>
+
+                <p>
+                    We are looking for a junior developer to
+                    join our development team.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Full-time</span>
+                    <span class="tag">Web Development</span>
+                </div>
+
+                <p class="salary">
+                    R18,000 - R25,000 / month
+                </p>
+
+                <button
+                    class="apply"
+                    onclick="applyJob('Junior Web Developer')"
+                >
+                    Apply Now
+                </button>
+
+            </div>
+
+
+            <!-- Job 2 -->
+            <div
+                class="job-card"
+                data-title="Software Developer Intern"
+                data-location="Cape Town"
+            >
+
+                <h3>Software Developer Intern</h3>
+
+                <p class="company">
+                    Tech Solutions SA
+                </p>
+
+                <p class="location">
+                    📍 Cape Town
+                </p>
+
+                <p>
+                    Gain practical experience while working
+                    with experienced software developers.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Internship</span>
+                    <span class="tag">Software</span>
+                </div>
+
+                <p class="salary">
+                    R8,000 - R12,000 / month
+                </p>
+
+                <button
+                    class="apply"
+                    onclick="applyJob('Software Developer Intern')"
+                >
+                    Apply Now
+                </button>
+
+            </div>
+
+
+            <!-- Job 3 -->
+            <div
+                class="job-card"
+                data-title="Data Analyst"
+                data-location="Pretoria"
+            >
+
+                <h3>Data Analyst</h3>
+
+                <p class="company">
+                    Finance SA
+                </p>
+
+                <p class="location">
+                    📍 Pretoria
+                </p>
+
+                <p>
+                    Analyse business data and create reports
+                    that support company decisions.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Full-time</span>
+                    <span class="tag">Data</span>
+                </div>
+
+                <p class="salary">
+                    R25,000 - R35,000 / month
+                </p>
+
+                <button
+                    class="apply"
+                    onclick="applyJob('Data Analyst')"
+                >
+                    Apply Now
+                </button>
+
+            </div>
+
+
+            <!-- Job 4 -->
+            <div
+                class="job-card"
+                data-title="IT Support Technician"
+                data-location="Durban"
+            >
+
+                <h3>IT Support Technician</h3>
+
+                <p class="company">
+                    Network Systems
+                </p>
+
+                <p class="location">
+                    📍 Durban
+                </p>
+
+                <p>
+                    Provide technical support to employees
+                    and maintain computer systems.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Full-time</span>
+                    <span class="tag">IT Support</span>
+                </div>
+
+                <p class="salary">
+                    R15,000 - R22,000 / month
+                </p>
+
+                <button
+                    class="apply"
+                    onclick="applyJob('IT Support Technician')"
+                >
+                    Apply Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="about">
+
+        <p>
+            © 2026 JobBoard. All Rights Reserved.
+        </p>
+
+        <p>
+            Connecting people with opportunities.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        function searchJobs() {
+
+            const search =
+                document
+                .getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+            const location =
+                document
+                .getElementById("locationFilter")
+                .value;
+
+            const jobs =
+                document.querySelectorAll(".job-card");
+
+            jobs.forEach(function(job) {
+
+                const title =
+                    job
+                    .getAttribute("data-title")
+                    .toLowerCase();
+
+                const jobLocation =
+                    job
+                    .getAttribute("data-location");
+
+                const matchesSearch =
+                    title.includes(search);
+
+                const matchesLocation =
+                    location === "" ||
+                    jobLocation === location;
+
+                if (matchesSearch && matchesLocation) {
+
+                    job.style.display = "block";
+
+                } else {
+
+                    job.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+        function applyJob(jobName) {
+
+            alert(
+                "You selected: " +
+                jobName +
+                "\n\nApplication page coming soon!"
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
