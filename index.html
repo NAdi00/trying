@@ -1,206 +1,1193 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LinkingJob</title>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6175298303630419"
-     crossorigin="anonymous"></script>
+
+<title>LinkingJob | Job Recommendations</title>
+
+<script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6175298303630419"
+    crossorigin="anonymous">
+</script>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f5f7fb;
+        color: #333;
+    }
+
+    nav {
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #2563eb;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+    }
+
+    nav ul li a:hover {
+        color: #2563eb;
+    }
+
+    .hero {
+        background: #2563eb;
+        color: white;
+        text-align: center;
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 19px;
+    }
+
+    .container {
+        width: 85%;
+        max-width: 1100px;
+        margin: 60px auto;
+    }
+
+
+    .intro {
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .intro h2 {
+        color: #1e3a8a;
+        margin-bottom: 15px;
+        font-size: 30px;
+    }
+
+    .intro p {
+        line-height: 1.7;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .tagline {
+        color: #6b7280;
+        font-size: 14px;
+    }
+
+    .section {
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        margin-bottom: 30px;
+    }
+
+    .section h2 {
+        font-size: 22px;
+        color: #1e3a8a;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #2563eb;
+        padding-bottom: 8px;
+    }
+
+    .tips-list,
+    .interview-list {
+        padding-left: 25px;
+        line-height: 1.7;
+    }
+
+    .tips-list li,
+    .interview-list li {
+        margin-bottom: 10px;
+    }
+
+    code {
+        background: #e5e7eb;
+        padding: 3px 6px;
+        border-radius: 4px;
+        color: #111827;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    th {
+        background: #eff6ff;
+        color: #1e3a8a;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    th,
+    td {
+        border: 1px solid #d1d5db;
+        padding: 12px;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background: #f8fafc;
+    }
+
+
+    /* =========================
+       IMPORTANT BOX
+    ========================= */
+
+    .important {
+        background: #fef3c7;
+        border-left: 5px solid #f59e0b;
+        padding: 15px;
+        margin-top: 20px;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       CHECKLIST
+    ========================= */
+
+    .checklist {
+        background: #dbeafe;
+        border-left: 5px solid #2563eb;
+        padding: 18px;
+        line-height: 1.7;
+        border-radius: 5px;
+    }
+
+
+    /* =========================
+       JOB SECTION
+    ========================= */
+
+    .jobs-section {
+        margin-top: 50px;
+    }
+
+    .jobs-section h2 {
+        text-align: center;
+        color: #1e3a8a;
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .jobs-description {
+        text-align: center;
+        color: #6b7280;
+        margin-bottom: 30px;
+    }
+
+    #jobGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    .job-card {
+        min-height: 150px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        font-size: 15px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.4;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .job-card:hover {
+        transform: translateY(-5px);
+        opacity: 0.9;
+        box-shadow: 0 7px 18px rgba(0,0,0,0.15);
+    }
+
+
+    /* =========================
+       DISCLAIMER
+    ========================= */
+
+    .disclaimer {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        margin-top: 40px;
+        text-align: center;
+        color: #6b7280;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        margin-top: 60px;
+        background: #111827;
+        color: white;
+        text-align: center;
+        padding: 30px;
+    }
+
+    footer p {
+        margin-bottom: 8px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 768px) {
+
+        nav {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav ul {
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 35px;
+        }
+
+        .hero p {
+            font-size: 17px;
+        }
+
+        .container {
+            width: 92%;
+            margin: 40px auto;
+        }
+
+        .section,
+        .intro {
+            padding: 25px;
+        }
+
+        #jobGrid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .job-card {
+            min-height: 130px;
+            font-size: 13px;
+            padding: 12px;
+        }
+
+    }
+
+    @media (max-width: 480px) {
+
+        #jobGrid {
+            grid-template-columns: 1fr;
+        }
+
+        .job-card {
+            min-height: 100px;
+        }
+
+    }
+
+</style>
 </head>
+<body>
+<nav>
+
+    <div class="logo">
+        Linking You
+    </div>
+
+    <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="about.html">About</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+    </ul>
+
+</nav>
+
+<section class="hero">
+
+    <h1>LinkingJob</h1>
+
+    <p>
+        Connecting job seekers with opportunities across South Africa.
+    </p>
+
+</section>
 
 
+<main class="container">
 
-<body style="margin:0;padding:20px;font-family:Arial,Helvetica,sans-serif;background:#f8fafc;color:#0f172a;line-height:1.6;">
-<div style="max-width:850px;margin:0 auto;background:#fff;padding:24px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
 
-  <h1 style="text-align:center;font-size:30px;margin:0 0 4px 0;color:#111827;">LinkingYou</h1><br>
-  <h2 style="text-align:center;font-size:18px;margin:0 0 4px 0;color:#111827;">Job Recommendations For You</h2><br>
-  <p style="text-align:center;font-size:12px;margin:0 0 16px 0;color:#6b7280;">Connect • Empowerment • Growth</p>
-<h1 style="font-size:24px;margin:0 0 16px 0;text-align:center;color:#0f172a;">Job Hunting & CV Guide for South Africa</h1>
+    <!-- =========================
+         INTRO
+    ========================= -->
 
-<h2 style="font-size:18px;margin:20px 0 10px 0;color:#1d4ed8;border-bottom:2px solid #3b82f6;padding-bottom:4px;">1. Job Hunting Tips</h2>
-<ul style="font-size:14px;margin:0 0 16px 20px;">
-<li style="margin-bottom:6px;"><strong>Apply fast:</strong> First 48 hours after posting gets 80% of recruiter attention</li>
-<li style="margin-bottom:6px;"><strong>Use 3 platforms:</strong> Indeed + Careers24 + LinkedIn covers 90% of SA jobs</li>
-<li style="margin-bottom:6px;"><strong>Location filter:</strong> Set your profile to the job suburb. Recruiters filter by distance first</li>
-<li style="margin-bottom:6px;"><strong>Keywords matter:</strong> Copy 5-6 exact words from the job post into your CV: "data capture", "MS Excel", "filing"</li>
-<li style="margin-bottom:6px;"><strong>File name:</strong> Save as <code style="background:#e2e8f0;padding:2px 4px;border-radius:3px;">Name_Surname_Admin_CV.pdf</code></li>
-<li style="margin-bottom:6px;"><strong>Follow up:</strong> No reply after 5 days? Call HR: "Hi, I applied for X role and I'm very keen"</li>
-</ul>
+    <section class="intro">
 
-<h2 style="font-size:18px;margin:20px 0 10px 0;color:#1d4ed8;border-bottom:2px solid #3b82f6;padding-bottom:4px;">2. CV Writing: Private vs Public Posts</h2>
-<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
-<tr style="background:#eff6ff;">
-<th style="border:1px solid #cbd5e1;padding:8px;text-align:left;">Type</th>
-<th style="border:1px solid #cbd5e1;padding:8px;text-align:left;">What it means</th>
-<th style="border:1px solid #cbd5e1;padding:8px;text-align:left;">CV changes to make</th>
-</tr>
-<tr>
-<td style="border:1px solid #cbd5e1;padding:8px;font-weight:700;">Private Company</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Business: Clicks, Shoprite, Discovery. Fast hiring</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Short 1-2 pages. Focus on skills + profit. Use action words: "Increased", "Saved", "Processed"</td>
-</tr>
-<tr>
-<td style="border:1px solid #cbd5e1;padding:8px;font-weight:700;">Government / Public</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Dept of Health, Municipality, SAPS. Z83 form needed</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Longer 3-4 pages. Full details. Attach certified copies. Use exact wording from advert</td>
-</tr>
-<tr>
-<td style="border:1px solid #cbd5e1;padding:8px;font-weight:700;">NGO / NPO</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Harambee, Gift of the Givers. Mission-driven</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Add volunteer work. Show "passion" and "community". Values matter more than profit</td>
-</tr>
-</table>
+        <h2>Job Recommendations For You</h2>
 
-<h2 style="font-size:18px;margin:20px 0 10px 0;color:#1d4ed8;border-bottom:2px solid #3b82f6;padding-bottom:4px;">3. Internship vs Apprenticeship vs Learnership vs Junior Role</h2>
-<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
-<tr style="background:#ecfdf5;">
-<th style="border:1px solid #cbd5e1;padding:8px;text-align:left;">Type</th>
-<th style="border:1px solid #cbd5e1;padding:8px;text-align:left;">For who?</th>
-<th style="border:1px solid #cbd5e1;padding:8px;text-align:left;">Qualification</th>
-<th style="border:1px solid #cbd5e1;padding:8px;text-align:left;">Output</th>
-<th style="border:1px solid #cbd5e1;padding:8px;text-align:left;">Pay</th>
-</tr>
-<tr>
-<td style="border:1px solid #cbd5e1;padding:8px;font-weight:700;">Internship</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Graduates with diploma/degree</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">You MUST have tertiary qual</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Work experience only</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Stipend R4000-R8000</td>
-</tr>
-<tr>
-<td style="border:1px solid #cbd5e1;padding:8px;font-weight:700;">Apprenticeship</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Future artisans: plumber, electrician</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Grade 9-12. Tech college helps</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Trade Test + become artisan</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Increases yearly R3000+</td>
-</tr>
-<tr>
-<td style="border:1px solid #cbd5e1;padding:8px;font-weight:700;">Learnership</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Unemployed youth 18-35</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Matric ONLY. Degree disqualifies you</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">NQF Level 3-5 certificate</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Stipend R2000-R6000</td>
-</tr>
-<tr>
-<td style="border:1px solid #cbd5e1;padding:8px;font-weight:700;">Junior Position</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Anyone starting career</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Matric or diploma depending on job</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Permanent job</td>
-<td style="border:1px solid #cbd5e1;padding:8px;">Salary R7000+</td>
-</tr>
-</table>
-<div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:10px;font-size:13px;margin-bottom:16px;">
-<strong>Important:</strong> For learnerships, remove your degree from CV. They target people with NO tertiary education. Keep it to Matric only.
-</div>
+        <p>
+            Find useful job opportunities, career advice and practical
+            tips to help you improve your chances of getting hired.
+        </p>
 
-<h2 style="font-size:18px;margin:20px 0 10px 0;color:#1d4ed8;border-bottom:2px solid #3b82f6;padding-bottom:4px;">4. Interview Tips That Work</h2>
-<ol style="font-size:14px;margin:0 0 16px 20px;">
-<li style="margin-bottom:6px;"><strong>Before:</strong> Research company. Know 3 facts: what they do, CEO name, recent news</li>
-<li style="margin-bottom:6px;"><strong>Dress:</strong> Even for warehouse jobs, wear clean pants + collared shirt. First impression = hired</li>
-<li style="margin-bottom:6px;"><strong>STAR method:</strong> When asked "Tell me about a time...", answer: Situation → Task → Action → Result</li>
-<li style="margin-bottom:6px;"><strong>Weakness question:</strong> Say a real weakness + how you fix it: "I'm shy, so I prepare my points before meetings"</li>
-<li style="margin-bottom:6px;"><strong>Your questions:</strong> Always ask 2: "What does success look like in 6 months?" and "What training do you provide?"</li>
-<li style="margin-bottom:6px;"><strong>After:</strong> Send SMS/Email same day: "Thank you for your time today. I'm very excited about the opportunity to join your team."</li>
-</ol>
+        <p class="tagline">
+            Connect • Empowerment • Growth
+        </p>
 
-<div style="background:#dbeafe;border-left:4px solid #3b82f6;padding:10px;font-size:13px;margin-top:20px;">
-<strong>Final checklist before you send any application:</strong><br>
-1. Does my CV location match the job suburb? 2. Did I use 5+ keywords from the advert? 3. Is my email subject correct? 4. Did I remove degree if it's a learnership?
-</div>
+    </section>
 
-</div>
-<div style="max-width:1200px;margin:0 auto;">
-  
-  
-  <div id="jobGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,3fr));gap:10px;">
-  </div>
-</div>
+
+    <!-- =========================
+         JOB HUNTING
+    ========================= -->
+
+    <section class="section">
+
+        <h2>1. Job Hunting Tips</h2>
+
+        <ul class="tips-list">
+
+            <li>
+                <strong>Apply fast:</strong>
+                Applying soon after a job is posted can improve your
+                chances of being noticed by recruiters.
+            </li>
+
+            <li>
+                <strong>Use multiple platforms:</strong>
+                Search across platforms such as Indeed, Careers24 and
+                LinkedIn to find more opportunities.
+            </li>
+
+            <li>
+                <strong>Location matters:</strong>
+                Make sure your CV clearly shows your location and consider
+                the distance between you and the workplace.
+            </li>
+
+            <li>
+                <strong>Keywords matter:</strong>
+                Include relevant keywords from the job advertisement,
+                such as "data capture", "MS Excel" or "filing".
+            </li>
+
+            <li>
+                <strong>Use a professional file name:</strong>
+                Save your CV as:
+                <code>Name_Surname_Admin_CV.pdf</code>
+            </li>
+
+            <li>
+                <strong>Follow up:</strong>
+                If appropriate, follow up after applying and politely
+                express your interest in the position.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- =========================
+         CV WRITING
+    ========================= -->
+
+    <section class="section">
+
+        <h2>2. CV Writing: Private vs Public Posts</h2>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <tr>
+
+                    <th>Type</th>
+                    <th>What it means</th>
+                    <th>CV changes to make</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>Private Company</strong>
+                    </td>
+
+                    <td>
+                        Businesses such as retail, banking and
+                        telecommunications companies.
+                    </td>
+
+                    <td>
+                        Keep the CV concise. Focus on relevant skills,
+                        achievements and experience. Use action words such
+                        as "Increased", "Saved" and "Processed".
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>Government / Public</strong>
+                    </td>
+
+                    <td>
+                        Government departments, municipalities and
+                        public institutions.
+                    </td>
+
+                    <td>
+                        Follow the requirements in the vacancy
+                        advertisement carefully and provide all requested
+                        documentation.
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>NGO / NPO</strong>
+                    </td>
+
+                    <td>
+                        Organisations focused on social, community or
+                        development objectives.
+                    </td>
+
+                    <td>
+                        Highlight volunteering, community involvement,
+                        relevant skills and your ability to contribute
+                        to the organisation's mission.
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAREER TYPES
+    ========================= -->
+
+    <section class="section">
+
+        <h2>3. Internship vs Apprenticeship vs Learnership vs Junior Role</h2>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <tr>
+
+                    <th>Type</th>
+                    <th>For who?</th>
+                    <th>Qualification</th>
+                    <th>Output</th>
+                    <th>Pay</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>Internship</strong>
+                    </td>
+
+                    <td>
+                        Graduates and students gaining practical
+                        workplace experience.
+                    </td>
+
+                    <td>
+                        Usually diploma, degree or relevant qualification,
+                        depending on the programme.
+                    </td>
+
+                    <td>
+                        Practical work experience.
+                    </td>
+
+                    <td>
+                        Usually a stipend.
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>Apprenticeship</strong>
+                    </td>
+
+                    <td>
+                        People training for skilled trades such as
+                        plumbing, electrical work or mechanical trades.
+                    </td>
+
+                    <td>
+                        Requirements depend on the trade and programme.
+                    </td>
+
+                    <td>
+                        Practical training and, where applicable,
+                        trade certification.
+                    </td>
+
+                    <td>
+                        Usually an allowance or wage.
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>Learnership</strong>
+                    </td>
+
+                    <td>
+                        People who want structured workplace and
+                        theoretical training.
+                    </td>
+
+                    <td>
+                        Requirements vary according to the specific
+                        learnership.
+                    </td>
+
+                    <td>
+                        Workplace experience and an applicable
+                        qualification or certificate.
+                    </td>
+
+                    <td>
+                        Usually a stipend.
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <strong>Junior Position</strong>
+                    </td>
+
+                    <td>
+                        People starting their professional career.
+                    </td>
+
+                    <td>
+                        Depends on the employer and position.
+                    </td>
+
+                    <td>
+                        Employment and professional experience.
+                    </td>
+
+                    <td>
+                        Salary.
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <div class="important">
+
+            <strong>Important:</strong>
+
+            Always read the specific vacancy requirements before applying.
+            Do not remove qualifications from your CV simply because a
+            position is a learnership. If the advertisement has specific
+            eligibility requirements, make sure your application complies
+            with them.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INTERVIEW TIPS
+    ========================= -->
+
+    <section class="section">
+
+        <h2>4. Interview Tips That Work</h2>
+
+        <ol class="interview-list">
+
+            <li>
+                <strong>Before:</strong>
+                Research the company and understand what they do.
+            </li>
+
+            <li>
+                <strong>Dress:</strong>
+                Wear clean, appropriate and professional clothing.
+            </li>
+
+            <li>
+                <strong>STAR method:</strong>
+                For experience-based questions, structure your answer
+                around Situation, Task, Action and Result.
+            </li>
+
+            <li>
+                <strong>Weakness question:</strong>
+                Mention a genuine weakness and explain what you are doing
+                to improve it.
+            </li>
+
+            <li>
+                <strong>Ask questions:</strong>
+                Prepare questions such as:
+                "What does success look like in the first six months?"
+            </li>
+
+            <li>
+                <strong>After:</strong>
+                Send a short thank-you message after the interview.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL CHECKLIST
+    ========================= -->
+
+    <section class="section">
+
+        <div class="checklist">
+
+            <strong>
+                Final checklist before you send any application:
+            </strong>
+
+            <br><br>
+
+            1. Does my CV match the requirements of the job?
+
+            <br>
+
+            2. Did I include relevant keywords from the advertisement?
+
+            <br>
+
+            3. Is my email address professional?
+
+            <br>
+
+            4. Did I check spelling and grammar?
+
+            <br>
+
+            5. Did I attach the correct CV and supporting documents?
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         JOB RECOMMENDATIONS
+    ========================= -->
+
+    <section class="jobs-section">
+
+        <h2>Latest Job Recommendations</h2>
+
+        <p class="jobs-description">
+            Click a job card to search for the opportunity on its
+            respective platform.
+        </p>
+
+        <div id="jobGrid"></div>
+
+    </section>
+
+
+    <!-- =========================
+         DISCLAIMER
+    ========================= -->
+
+    <section class="disclaimer">
+
+        <p>
+            <strong>Job Listing Notice</strong>
+        </p>
+
+        <p>
+            The jobs listed on LinkingJob are sourced from internet
+            third-party platforms and job agents. LinkingJob does not
+            guarantee employment and applicants should verify job details
+            directly with the relevant employer or job platform before
+            applying.
+        </p>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        &copy; 2026 LinkingJob. All Rights Reserved.
+    </p>
+
+    <p>
+        Connecting People with Opportunities.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
-const sources = {
-  "Indeed": "https://za.indeed.com",
-  "Careers24": "https://www.careers24.com",
-  "Reddit": "https://www.reddit.com"
-};
 
-const jobs = [
-  {code:"Receptionist — Amrod (Johannesburg)",name:"Receptionist — Amrod (Johannesburg)",color:"#3b82f6",src:"Indeed"},
-  {code:"Human Resource Admin Clerk",name:"Human Resource Admin Clerk — Ekurhuleni West TVET College",color:"#3b82f6",src:"Indeed"},
-  {code:"Print & Admin Store Assistan",name:"Print & Admin Store Assistant — MLG Recruitment",color:"#3b82f6",src:"Indeed"},
-  {code:"Administrative Internship — Ekurhuleni West TVET College",name:"Administrative Internship — Ekurhuleni West TVET College",color:"#3b82f6",src:"Indeed"},
-  {code:"Conveyancing Secretary — Sandton",name:"Conveyancing Secretary — Sandton",color:"#3b82f6",src:"Careers24"},
-  {code:"Office Support Assistant — Johannesburg CBD",name:"Office Support Assistant — Johannesburg CBD",color:"#3b82f6",src:"Indeed"},
-  {code:"Data Capture Clerk — Johannesburg",name:"Data Capture Clerk — Johannesburg",color:"#3b82f6",src:"Indeed"},
-  {code:"Filing Clerk — Johannesburg",name:"Filing Clerk — Johannesburg",color:"#3b82f6",src:"Indeed"},
-  {code:"Digital Customer Service Rep — Luxity",name:"Digital Customer Service Rep — Luxity",color:"#10b981",src:"Indeed"},
-  {code:"Customer Service Rep — Moladira Skills (Sandton)",name:"Customer Service Rep — Moladira Skills (Sandton)",color:"#10b981",src:"Indeed"},
-  {code:"Call Centre Manager — Johannesburg CBD",name:"Call Centre Manager — Johannesburg CBD",color:"#10b981",src:"Careers24"},
-  {code:"Client Relationship Specialist / Paraplanner",name:"Client Relationship Specialist / Paraplanner",color:"#10b981",src:"Careers24"},
-  {code:"Retail Service Advisor — Gauteng",name:"Retail Service Advisor — Gauteng",color:"#10b981",src:"Indeed"},
-  {code:"Online Sales Support Agent",name:"Online Sales Support Agent",color:"#10b981",src:"Indeed"},
-  {code:"CRM Support Assistant",name:"CRM Support Assistant",color:"#10b981",src:"Indeed"},
-  {code:"Customer Complaints Coordinator",name:"Customer Complaints Coordinator",color:"#10b981",src:"Indeed"},
-  {code:"Junior FMCG Sales Representative",name:"Junior FMCG Sales Representative",color:"#f59e0b",src:"Careers24"},
-  {code:"Sales Generator — Foot Gear SA",name:"Sales Generator — Foot Gear SA",color:"#f59e0b",src:"Indeed"},
-  {code:"Entry Level Marketing Assistant — ML Direct Marketing",name:"Entry Level Marketing Assistant — ML Direct Marketing",color:"#f59e0b",src:"Indeed"},
-  {code:"Retail Store Assistant — East Rand",name:"Retail Store Assistant — East Rand",color:"#f59e0b",src:"Indeed"},
-  {code:"Wellness Assistant — Clicks Group",name:"Wellness Assistant — Clicks Group",color:"#f59e0b",src:"Indeed"},
-  {code:"Retail Merchandiser — Johannesburg",name:"Retail Merchandiser — Johannesburg",color:"#f59e0b",src:"Indeed"},
-  {code:"Telesales Consultant — Johannesburg CBD",name:"Telesales Consultant — Johannesburg CBD",color:"#f59e0b",src:"Careers24"},
-  {code:"Sales Consultant — Sandton",name:"Sales Consultant — Sandton",color:"#f59e0b",src:"Indeed"},
-  {code:"CNC Machinist — Johannesburg South",name:"CNC Machinist — Johannesburg South",color:"#ef4444",src:"Careers24"},
-  {code:"Mechanical Draughtsman — Johannesburg South",name:"Mechanical Draughtsman — Johannesburg South",color:"#ef4444",src:"Careers24"},
-  {code:"Welding Inspector QC — Johannesburg South",name:"Welding Inspector QC — Johannesburg South",color:"#ef4444",src:"Careers24"},
-  {code:"Production Technician Internship — Procter & Gamble",name:"Production Technician Internship — Procter & Gamble",color:"#ef4444",src:"Indeed"},
-  {code:"Metallurgical Eng Graduate — Steinmuller Africa",name:"Metallurgical Eng Graduate — Steinmuller Africa",color:"#ef4444",src:"Indeed"},
-  {code:"Assembler – Production",name:"Assembler – Production",color:"#ef4444",src:"Indeed"},
-  {code:"Telecoms Network Ops Learnership — Ericsson",name:"Telecoms Network Ops Learnership — Ericsson",color:"#ef4444",src:"Indeed"},
-  {code:"Chloroplat Operator — Tharisa Minerals",name:"Chloroplat Operator — Tharisa Minerals",color:"#ef4444",src:"Indeed"},
-  {code:"Accountant / Bookkeeper",name:"Accountant / Bookkeeper",color:"#8b5cf6",src:"Reddit"},
-  {code:"Data Analyst — Johannesburg CBD",name:"Data Analyst — Johannesburg CBD",color:"#8b5cf6",src:"Careers24"},
-  {code:"Business Analyst — PSG Konsult",name:"Business Analyst — PSG Konsult",color:"#8b5cf6",src:"Indeed"},
-  {code:"Junior Financial Administrator",name:"Junior Financial Administrator",color:"#8b5cf6",src:"Indeed"},
-  {code:"Payroll Assistant — Johannesburg",name:"Payroll Assistant — Johannesburg",color:"#8b5cf6",src:"Indeed"},
-  {code:"Procurement Clerk — Gauteng",name:"Procurement Clerk — Gauteng",color:"#8b5cf6",src:"Indeed"},
-  {code:"Creditors Clerk — Johannesburg",name:"Creditors Clerk — Johannesburg",color:"#8b5cf6",src:"Indeed"},
-  {code:"Accounts Administrator — Sandton",name:"Accounts Administrator — Sandton",color:"#8b5cf6",src:"Careers24"},
-  {code:"General Worker — Curro Holdings",name:"General Worker — Curro Holdings",color:"#06b6d4",src:"Indeed"},
-  {code:"Teacher Assistant — SPARK Schools",name:"Teacher Assistant — SPARK Schools",color:"#06b6d4",src:"Indeed"},
-  {code:"Management Internship — Ekurhuleni West TVET College",name:"Management Internship — Ekurhuleni West TVET College",color:"#06b6d4",src:"Indeed"},
-  {code:"Range Officer — Midrand",name:"Range Officer — Midrand",color:"#06b6d4",src:"Careers24"},
-  {code:"Warehouse Assistant — Johannesburg",name:"Warehouse Assistant — Johannesburg",color:"#06b6d4",src:"Indeed"},
-  {code:"Driver Assistant — Gauteng",name:"Driver Assistant — Gauteng",color:"#06b6d4",src:"Indeed"},
-  {code:"Security Officer — Johannesburg",name:"Security Officer — Johannesburg",color:"#06b6d4",src:"Reddit"},
-  {code:"Hospitality Assistant — Gauteng",name:"Hospitality Assistant — Gauteng",color:"#06b6d4",src:"Reddit"},
-  {code:"Learnership — YES Programme",name:"Learnership — YES Programme",color:"#06b6d4",src:"Indeed"},
-  {code:"Youth Employment — Harambee",name:"Youth Employment — Harambee",color:"#06b6d4",src:"Indeed"}
-];
+    const sources = {
 
-const grid = document.getElementById('jobGrid');
+        "Indeed": "https://za.indeed.com",
 
-// Generate 200 cards by cycling your job list
-for(let i=0;i<200;i++){
-  const job = jobs[i % jobs.length];
-  const link = sources[job.src];
-  
-  const card = document.createElement('a');
-  card.href = link;
-  card.target = "_blank";
-  card.title = job.name + " • " + job.src; // Full job info on hover
-  card.style.cssText = `width:150px;height:150px;background:${job.color};border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;font-weight:700;text-align:center;line-height:1;text-decoration:none;cursor:pointer;`;
-  card.textContent = job.code; // 3-letter code fits 150x150
-  card.onmouseover = () => card.style.opacity = '0.8';
-  card.onmouseout = () => card.style.opacity = '1';
-  
-  grid.appendChild(card);
-}
+        "Careers24": "https://www.careers24.com",
+
+        "Reddit": "https://www.reddit.com"
+
+    };
+
+
+    const jobs = [
+
+        {
+            name: "Receptionist — Amrod (Johannesburg)",
+            color: "#3b82f6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Human Resource Admin Clerk — Ekurhuleni West TVET College",
+            color: "#3b82f6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Print & Admin Store Assistant — MLG Recruitment",
+            color: "#3b82f6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Administrative Internship — Ekurhuleni West TVET College",
+            color: "#3b82f6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Conveyancing Secretary — Sandton",
+            color: "#3b82f6",
+            src: "Careers24"
+        },
+
+        {
+            name: "Office Support Assistant — Johannesburg CBD",
+            color: "#3b82f6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Data Capture Clerk — Johannesburg",
+            color: "#3b82f6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Filing Clerk — Johannesburg",
+            color: "#3b82f6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Digital Customer Service Rep — Luxity",
+            color: "#10b981",
+            src: "Indeed"
+        },
+
+        {
+            name: "Customer Service Rep — Moladira Skills (Sandton)",
+            color: "#10b981",
+            src: "Indeed"
+        },
+
+        {
+            name: "Call Centre Manager — Johannesburg CBD",
+            color: "#10b981",
+            src: "Careers24"
+        },
+
+        {
+            name: "Client Relationship Specialist / Paraplanner",
+            color: "#10b981",
+            src: "Careers24"
+        },
+
+        {
+            name: "Retail Service Advisor — Gauteng",
+            color: "#10b981",
+            src: "Indeed"
+        },
+
+        {
+            name: "Online Sales Support Agent",
+            color: "#10b981",
+            src: "Indeed"
+        },
+
+        {
+            name: "CRM Support Assistant",
+            color: "#10b981",
+            src: "Indeed"
+        },
+
+        {
+            name: "Customer Complaints Coordinator",
+            color: "#10b981",
+            src: "Indeed"
+        },
+
+        {
+            name: "Junior FMCG Sales Representative",
+            color: "#f59e0b",
+            src: "Careers24"
+        },
+
+        {
+            name: "Sales Generator — Foot Gear SA",
+            color: "#f59e0b",
+            src: "Indeed"
+        },
+
+        {
+            name: "Entry Level Marketing Assistant — ML Direct Marketing",
+            color: "#f59e0b",
+            src: "Indeed"
+        },
+
+        {
+            name: "Retail Store Assistant — East Rand",
+            color: "#f59e0b",
+            src: "Indeed"
+        },
+
+        {
+            name: "Wellness Assistant — Clicks Group",
+            color: "#f59e0b",
+            src: "Indeed"
+        },
+
+        {
+            name: "Retail Merchandiser — Johannesburg",
+            color: "#f59e0b",
+            src: "Indeed"
+        },
+
+        {
+            name: "Telesales Consultant — Johannesburg CBD",
+            color: "#f59e0b",
+            src: "Careers24"
+        },
+
+        {
+            name: "Sales Consultant — Sandton",
+            color: "#f59e0b",
+            src: "Indeed"
+        },
+
+        {
+            name: "CNC Machinist — Johannesburg South",
+            color: "#ef4444",
+            src: "Careers24"
+        },
+
+        {
+            name: "Mechanical Draughtsman — Johannesburg South",
+            color: "#ef4444",
+            src: "Careers24"
+        },
+
+        {
+            name: "Welding Inspector QC — Johannesburg South",
+            color: "#ef4444",
+            src: "Careers24"
+        },
+
+        {
+            name: "Production Technician Internship — Procter & Gamble",
+            color: "#ef4444",
+            src: "Indeed"
+        },
+
+        {
+            name: "Metallurgical Eng Graduate — Steinmuller Africa",
+            color: "#ef4444",
+            src: "Indeed"
+        },
+
+        {
+            name: "Assembler – Production",
+            color: "#ef4444",
+            src: "Indeed"
+        },
+
+        {
+            name: "Telecoms Network Ops Learnership — Ericsson",
+            color: "#ef4444",
+            src: "Indeed"
+        },
+
+        {
+            name: "Chloroplat Operator — Tharisa Minerals",
+            color: "#ef4444",
+            src: "Indeed"
+        },
+
+        {
+            name: "Accountant / Bookkeeper",
+            color: "#8b5cf6",
+            src: "Reddit"
+        },
+
+        {
+            name: "Data Analyst — Johannesburg CBD",
+            color: "#8b5cf6",
+            src: "Careers24"
+        },
+
+        {
+            name: "Business Analyst — PSG Konsult",
+            color: "#8b5cf6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Junior Financial Administrator",
+            color: "#8b5cf6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Payroll Assistant — Johannesburg",
+            color: "#8b5cf6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Procurement Clerk — Gauteng",
+            color: "#8b5cf6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Creditors Clerk — Johannesburg",
+            color: "#8b5cf6",
+            src: "Indeed"
+        },
+
+        {
+            name: "Accounts Administrator — Sandton",
+            color: "#8b5cf6",
+            src: "Careers24"
+        },
+
+        {
+            name: "General Worker — Curro Holdings",
+            color: "#06b6d4",
+            src: "Indeed"
+        },
+
+        {
+            name: "Teacher Assistant — SPARK Schools",
+            color: "#06b6d4",
+            src: "Indeed"
+        },
+
+        {
+            name: "Management Internship — Ekurhuleni West TVET College",
+            color: "#06b6d4",
+            src: "Indeed"
+        },
+
+        {
+            name: "Range Officer — Midrand",
+            color: "#06b6d4",
+            src: "Careers24"
+        },
+
+        {
+            name: "Warehouse Assistant — Johannesburg",
+            color: "#06b6d4",
+            src: "Indeed"
+        },
+
+        {
+            name: "Driver Assistant — Gauteng",
+            color: "#06b6d4",
+            src: "Indeed"
+        },
+
+        {
+            name: "Security Officer — Johannesburg",
+            color: "#06b6d4",
+            src: "Reddit"
+        },
+
+        {
+            name: "Hospitality Assistant — Gauteng",
+            color: "#06b6d4",
+            src: "Reddit"
+        },
+
+        {
+            name: "Learnership — YES Programme",
+            color: "#06b6d4",
+            src: "Indeed"
+        },
+
+        {
+            name: "Youth Employment — Harambee",
+            color: "#06b6d4",
+            src: "Indeed"
+        }
+
+    ];
+
+
+    const grid = document.getElementById("jobGrid");
+
+
+    /*
+        Generate job cards.
+
+        The original website generated 200 cards.
+        This version keeps that behaviour.
+    */
+
+    for (let i = 0; i < 200; i++) {
+
+        const job = jobs[i % jobs.length];
+
+        const link = sources[job.src];
+
+
+        const card = document.createElement("a");
+
+        card.href = link;
+
+        card.target = "_blank";
+
+        card.rel = "noopener noreferrer";
+
+        card.className = "job-card";
+
+        card.style.background = job.color;
+
+        card.title = job.name + " • " + job.src;
+
+        card.textContent = job.name;
+
+
+        grid.appendChild(card);
+
+    }
+
 </script>
-<br><br>
-<h5 style="text-align:center;margin:0 0 4px 0;color:rgb(100, 100, 100);">All the job listed here are from internet third parties and first hand job agents</h5>
-<br>
-<h5 style="text-align:center;margin:0 0 4px 0;color:rgb(100, 100, 100);">all rights reserved @ LinkingJob</h5>
-<br>
+```
+
 </body>
+
 </html>
