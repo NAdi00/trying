@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linking You | Jobs & Skills Tips South Africa</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+body{background:#f4f7fb;color:#172033;line-height:1.55}
+
+/* NEW TOPMOST NAVBAR - ADDED */
+navtop{background:white;display:flex;justify-content:space-between;align-items:center;padding:20px 8%;box-shadow:0 2px 10px rgba(0,0,0,0.08);position:sticky;top:0;z-index:20}
+.logo{font-size:28px;font-weight:bold;color:#2563eb}
+navtop ul{list-style:none;display:flex;gap:30px}
+navtop ul li a{text-decoration:none;color:#333;font-weight:500}
+navtop ul li a:hover{color:#2563eb}
+
+header{background:linear-gradient(135deg,#101c3c,#1c5d99);color:white;padding:55px 20px;text-align:center}
+header h1{font-size:40px;margin-bottom:10px}.brand{color:#8fd3ff}
+header p{max-width:850px;margin:auto;opacity:.92}
+
+nav{background:white;display:flex;justify-content:space-between;align-items:center;padding:20px 8%;box-shadow:0 2px 10px rgba(0,0,0,0.08);position:sticky;top:0;z-index:20}
+.logo{font-size:28px;font-weight:bold;color:#2563eb}
+nav ul{list-style:none;display:flex;gap:30px}
+nav ul li a{text-decoration:none;color:#333;font-weight:500}
+nav ul li a:hover{color:#2563eb}
+
+
+nav{position:sticky;top:48px;z-index:10;background:white;box-shadow:0 2px 12px #0001;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:12px}*/
+nav a{color:#2563eb;text-decoration:none;font-weight:bold;padding:8px 12px;border-radius:7px} */
+nav a:hover{background:#2563eb}
+.container{max-width:1200px;margin:30px auto;padding:0 18px}
+.hero{background:white;border-radius:16px;padding:28px;box-shadow:0 5px 20px #0000000d;margin-bottom:25px}
+.hero h2{font-size:29px;margin-bottom:8px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+input,select{padding:12px;border:1px solid #d4dce8;border-radius:8px;font-size:15px}
+input{flex:1;min-width:230px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:white;border:1px solid #e0e6ef;border-radius:14px;padding:21px;box-shadow:0 4px 14px #1428500b}
+.card h3{color:#163e70;margin-bottom:8px}.tag{display:inline-block;background:#edf4ff;color:#1557a0;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:bold;margin-bottom:12px}
+.cost{font-size:20px;font-weight:bold;margin:10px 0;color:#157347}
+.small{font-size:13px;color:#657287}
+.table-wrap{overflow-x:auto;background:white;border-radius:14px;box-shadow:0 4px 14px #0000000b}
+table{width:100%;border-collapse:collapse;min-width:750px}th,td{text-align:left;padding:13px;border-bottom:1px solid #e8ecf2}th{background:#edf4ff;color:#153f73}
+.notice{background:#fff8df;border-left:5px solid #e0a800;padding:17px;border-radius:8px;margin:18px 0}
+.ok{background:#eaf8f0;border-left:5px solid #198754;padding:17px;border-radius:8px;margin:18px 0}
+section{scroll-margin-top:120px;margin:45px 0}
+.btn{display:inline-block;background:#165dab;color:white;text-decoration:none;padding:10px 15px;border-radius:8px;font-weight:bold;margin-top:10px}
+footer{text-align:center;padding:40px;color:#667085;font-size:13px}
+.hidden{display:none}
+@media(max-width:600px){header h1{font-size:31px}.grid{grid-template-columns:1fr}.topmost-navbar{flex-direction:column;gap:8px} nav{top:88px}}
+</style>
+</head>
+<body>
+
+<!-- NEW TOPMOST NAVBAR WITH HOME, JOBS, CONTACT, ABOUT -->
+<navtop>
+<div class="logo">Linking You</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="jobs.html">Jobs</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</navtop>
+
+<header id="home">
+<h1><span class="brand">Linking You</span> Jobs & Skills Tips</h1>
+<p>A practical South African guide to certificates, licences, trades, short courses and career skills. Use it to discover possible career paths and compare approximate training costs.</p>
+</header>
+
+<nav>
+<a href="#certificates">Certificates</a>
+<a href="#security">Security</a>
+<a href="#safety">Safety</a>
+<a href="#trades">Trades</a>
+<a href="#driving">Licences</a>
+<a href="#tips">Job Tips</a>
+</nav>
+
+<main class="container" id="jobs">
+<div class="hero">
+<h2>Build skills that employers look for</h2>
+<p>Not every career requires a university degree. South Africa has many vocational, occupational, regulatory and short-course pathways. Before paying a provider, check accreditation, entry requirements, assessment arrangements and whether the employer actually requires that qualification.</p>
+<div class="filters">
+<input id="search" placeholder="Search: forklift, RE5, welding, security...">
+<select id="category">
+<option value="all">All categories</option><option>Security</option><option>Safety</option><option>Trades</option><option>Driving</option><option>Business</option><option>Digital</option>
+</select>
+</div>
+</div>
+
+<section id="certificates">
+<h2>1. Certificates & short-course pathways</h2>
+<div class="grid">
+<div class="card" data-cat="Digital"><span class="tag">Digital</span><h3>IT Support</h3><p>Useful for help-desk, desktop support and junior technician roles.</p><p class="cost">Typical: R1,000–R10,000+</p><p class="small">Provider, duration and accreditation vary.</p></div>
+<div class="card" data-cat="Digital"><span class="tag">Digital</span><h3>Networking</h3><p>Consider vendor training such as Cisco networking or other recognised programmes.</p><p class="cost">Typical: R2,000–R20,000+</p></div>
+<div class="card" data-cat="Business"><span class="tag">Business</span><h3>Bookkeeping / Accounting</h3><p>Useful for junior finance, bookkeeping and administration roles.</p><p class="cost">Typical: R1,500–R15,000+</p></div>
+<div class="card" data-cat="Digital"><span class="tag">Digital</span><h3>Data / Excel</h3><p>Excel, data analysis, SQL and reporting skills can strengthen many office applications.</p><p class="cost">Typical: R500–R8,000+</p></div>
+</div>
+</section>
+
+<section id="security">
+<h2>2. Security qualifications</h2>
+<div class="notice"><strong>Important:</strong> Security training should be checked against current PSIRA requirements and the training provider's accreditation before enrolment.</div>
+<div class="grid">
+<div class="card" data-cat="Security"><span class="tag">Security</span><h3>PSIRA Grade E</h3><p>Common entry-level private-security training.</p><p class="cost">Est. R750–R1,300</p><p class="small">Examples found in 2026 provider price lists; prices vary by centre.</p></div>
+<div class="card" data-cat="Security"><span class="tag">Security</span><h3>PSIRA Grade D</h3><p>Security/access-control progression.</p><p class="cost">Est. R800–R1,300</p></div>
+<div class="card" data-cat="Security"><span class="tag">Security</span><h3>PSIRA Grade C</h3><p>Higher security responsibility and progression toward supervisory work.</p><p class="cost">Est. R850–R1,100</p></div>
+<div class="card" data-cat="Security"><span class="tag">Security</span><h3>PSIRA Grade B</h3><p>Senior/supervisory security pathway.</p><p class="cost">Est. R1,000–R1,300</p></div>
+<div class="card" data-cat="Security"><span class="tag">Security</span><h3>PSIRA Grade A</h3><p>Advanced/management security pathway.</p><p class="cost">Est. R1,000–R1,500</p></div>
+<div class="card" data-cat="Security"><span class="tag">Security</span><h3>CCTV / Control Room</h3><p>Useful for control-room monitoring and surveillance roles.</p><p class="cost">Est. R950–R2,000+</p></div>
+<div class="card" data-cat="Security"><span class="tag">Security</span><h3>Armed Response / Firearms</h3><p>Specialist security training. Firearms requirements are separate from ordinary security grades.</p><p class="cost">Often R1,500–R5,500+</p><p class="small">Requirements and legal competency processes must be checked carefully.</p></div>
+<div class="card" data-cat="Security"><span class="tag">Security</span><h3>National Key Point / Specialist Security</h3><p>Specialist pathways may require prior grades and additional training.</p><p class="cost">Est. R2,500–R7,000+</p></div>
+</div>
+</section>
+
+<section id="safety">
+<h2>3. Health, safety & site courses</h2>
+<div class="grid">
+<div class="card" data-cat="Safety"><span class="tag">Safety</span><h3>First Aid Level 1–2</h3><p>Useful for workplaces, construction, security and general safety roles.</p><p class="cost">Est. R1,000–R2,500</p></div>
+<div class="card" data-cat="Safety"><span class="tag">Safety</span><h3>SHE Representative</h3><p>Workplace safety representative training.</p><p class="cost">Est. R275–R1,000+</p></div>
+<div class="card" data-cat="Safety"><span class="tag">Safety</span><h3>Working at Heights</h3><p>Useful for construction, maintenance and elevated-work environments.</p><p class="cost">Est. R1,800–R2,900</p></div>
+<div class="card" data-cat="Safety"><span class="tag">Safety</span><h3>Fire Fighting</h3><p>Basic workplace fire-response training.</p><p class="cost">Est. R1,500–R2,000+</p></div>
+<div class="card" data-cat="Safety"><span class="tag">Safety</span><h3>Hazard Identification / Risk Assessment</h3><p>Useful for workplace safety and supervisory responsibilities.</p><p class="cost">Est. R275–R1,500+</p></div>
+<div class="card" data-cat="Safety"><span class="tag">Safety</span><h3>Safety Officer / SHEMTRAC-type training</h3><p>Longer safety programmes can support entry into occupational safety roles.</p><p class="cost">Est. R7,000–R15,000+</p></div>
+</div>
+</section>
+
+<section id="trades">
+<h2>4. Trades & practical skills</h2>
+<div class="grid">
+<div class="card" data-cat="Trades"><span class="tag">Trade</span><h3>Bricklaying</h3><p>Short courses can teach practical construction skills; a full occupational qualification is a much longer pathway.</p><p class="cost">Short course: about R8,500–R17,000</p><p class="small">Full occupational bricklayer example: R64,130/year at one 2026 provider.</p></div>
+<div class="card" data-cat="Trades"><span class="tag">Trade</span><h3>Plumbing</h3><p>Basic plumbing and pipework training can be used as a foundation for construction work.</p><p class="cost">Short course: about R8,500–R17,000</p></div>
+<div class="card" data-cat="Trades"><span class="tag">Trade</span><h3>Welding</h3><p>Arc, MIG/CO2, TIG and coded-welding pathways are available.</p><p class="cost">About R8,000–R20,000+ depending on course</p></div>
+<div class="card" data-cat="Trades"><span class="tag">Trade</span><h3>Electrical</h3><p>Look for recognised training and understand that a short course is not automatically the same as an electrician trade qualification.</p><p class="cost">Basic courses: about R10,000–R20,000+</p></div>
+<div class="card" data-cat="Trades"><span class="tag">Trade</span><h3>Carpentry</h3><p>Practical construction and furniture-related skill pathway.</p><p class="cost">Short course: about R8,500+</p></div>
+<div class="card" data-cat="Trades"><span class="tag">Trade</span><h3>Painting / Plastering / Tiling</h3><p>Construction finishing skills that can support employment or self-employment.</p><p class="cost">Often around R4,350–R8,500+ for basic courses</p></div>
+<div class="card" data-cat="Trades"><span class="tag">Trade</span><h3>Refrigeration & Air Conditioning</h3><p>Installation, maintenance and repair skills for cooling systems.</p><p class="cost">Example short course: about R15,000</p></div>
+<div class="card" data-cat="Trades"><span class="tag">Trade</span><h3>Earthmoving Equipment</h3><p>Operator training can include TLB, excavator and dump-truck pathways.</p><p class="cost">About R3,500–R5,500+</p></div>
+</div>
+</section>
+
+<section id="driving">
+<h2>5. Licences & operator training</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Skill / licence</th><th>Typical estimate</th><th>Possible work</th><th>Important note</th></tr></thead>
+<tbody>
+<tr><td>Forklift operator</td><td>R1,000–R5,000</td><td>Warehouse / logistics</td><td>Check unit standard, practical training and employer requirements.</td></tr>
+<tr><td>Code 8 / light vehicle</td><td>R3,500–R6,000+</td><td>Driver / field work</td><td>Price depends on lessons, test and package.</td></tr>
+<tr><td>Code 10</td><td>R6,000–R7,500+</td><td>Delivery / truck roles</td><td>Check current licensing requirements and package inclusions.</td></tr>
+<tr><td>Code 14 / heavy combination</td><td>R10,500–R11,000+</td><td>Heavy vehicle / logistics</td><td>Additional professional requirements may apply.</td></tr>
+<tr><td>Dangerous Goods (DG)</td><td>About R1,500+</td><td>Specialised transport</td><td>Usually linked to applicable professional driving requirements.</td></tr>
+<tr><td>TLB operator</td><td>About R3,500+</td><td>Construction / earthmoving</td><td>Look for competent operator training and practical hours.</td></tr>
+<tr><td>Excavator operator</td><td>About R4,500+</td><td>Construction / mining</td><td>Machine type and accreditation affect price.</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section>
+<h2>6. RE5 — Financial Services</h2>
+<div class="card" data-cat="Business">
+<span class="tag">Financial Services</span>
+<h3>RE5 Regulatory Examination</h3>
+<p>RE5 is the regulatory examination for representatives in all categories of financial service providers, subject to the FSCA rules and listed exceptions.</p>
+<p class="cost">Exam fee: check the current legislated fee</p>
+<p>The FSCA states that RE5 has 50 multiple-choice questions and a 65% pass mark. Training providers may charge additional preparation-course fees.</p>
+<a class="btn" href="https://www.fsca.co.za/Regulatory-Examinations-FAQ/" target="_blank" rel="noopener">FSCA RE5 information ↗</a>
+</div>
+</section>
+
+<section id="tips">
+<h2>7. Job tips — what to do before paying for a course</h2>
+<div class="grid">
+<div class="card"><h3>1. Check accreditation</h3><p>Ask whether the provider is properly accredited/registered for the qualification or course and which body recognises it.</p></div>
+<div class="card"><h3>2. Check the job first</h3><p>Search real vacancies and write down the exact certificates, licences, experience and software employers request.</p></div>
+<div class="card"><h3>3. Compare 3 providers</h3><p>Compare price, duration, assessment, practical hours, certificate, accreditation and what is included.</p></div>
+<div class="card"><h3>4. Don't confuse a certificate with a trade qualification</h3><p>A short course can teach useful skills but does not automatically make you a qualified artisan or professional.</p></div>
+<div class="card"><h3>5. Watch for hidden costs</h3><p>Ask about registration, exam fees, PPE, transport, materials, medicals, licence tests and certificate fees.</p></div>
+<div class="card"><h3>6. Build a skills combination</h3><p>Example: Forklift + warehouse experience + basic computer/Excel skills can make a stronger logistics application than one certificate alone.</p></div>
+<div class="card"><h3>7. Keep evidence</h3><p>Save certificates, statements of results, licences, ID copies where appropriate, references and a current CV.</p></div>
+<div class="card"><h3>8. Never pay for a guaranteed job</h3><p>Be suspicious of anyone promising employment in exchange for an upfront “job placement” fee.</p></div>
+</div>
+</section>
+
+<!-- ABOUT & CONTACT SECTIONS FOR TOP NAVBAR -->
+<section id="about">
+<h2>About Linking You</h2>
+<div class="card">
+<h3>Who we are</h3>
+<p>Linking You is a South African career guide that helps job seekers understand certificates, licences, trades and short courses before paying a provider. We do not sell courses — we provide practical tips to compare costs, accreditation and employer requirements.</p>
+<p class="small" style="margin-top:10px">Based in Midrand, Gauteng. Information is for guidance only — always confirm with the provider or regulator.</p>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<div class="grid">
+<div class="card"><h3>Email</h3><p>linkingyoujobs@gmail.com</p><p class="small">We respond within 24-48 hours</p></div>
+<div class="card"><h3>Location</h3><p>Midrand, Gauteng, South Africa</p><p class="small">Serving job seekers nationwide</p></div>
+<div class="card"><h3>Disclaimer</h3><p>This site provides general information, not job placement. We do not charge placement fees.</p></div>
+</div>
+</section>
+
+<div class="ok"><strong>Cost disclaimer:</strong> The prices on this page are estimates/examples, not fixed national prices. Training fees change by provider, city, accreditation, duration, equipment and whether exams/registration are included. Always confirm the current 2026 price and recognition directly with the training provider or regulator.</div>
+</main>
+
+<footer>© 2026 Linking You • Career information for South African job seekers.</footer>
+
+<script>
+const search=document.getElementById('search'), category=document.getElementById('category');
+const cards=[...document.querySelectorAll('.card')];
+function filter(){
+ const q=search.value.toLowerCase(), c=category.value.toLowerCase();
+ cards.forEach(x=>{
+   const text=x.innerText.toLowerCase(), cat=(x.dataset.cat||'').toLowerCase();
+   x.classList.toggle('hidden', (q && !text.includes(q)) || (c!=='all' && cat!==c));
+ });
+}
+search.addEventListener('input',filter); category.addEventListener('change',filter);
+</script>
+</body>
+</html>

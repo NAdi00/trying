@@ -1,1193 +1,207 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>LinkingJob | Job Recommendations</title>
-
-<script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6175298303630419"
-    crossorigin="anonymous">
-</script>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6175298303630419" crossorigin="anonymous"></script>
 <style>
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
-
-    body {
-        background: #f5f7fb;
-        color: #333;
-    }
-
-    nav {
-        background: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 8%;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-
-    .logo {
-        font-size: 28px;
-        font-weight: bold;
-        color: #2563eb;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 30px;
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-    }
-
-    nav ul li a:hover {
-        color: #2563eb;
-    }
-
-    .hero {
-        background: #2563eb;
-        color: white;
-        text-align: center;
-        padding: 70px 20px;
-    }
-
-    .hero h1 {
-        font-size: 45px;
-        margin-bottom: 15px;
-    }
-
-    .hero p {
-        font-size: 19px;
-    }
-
-    .container {
-        width: 85%;
-        max-width: 1100px;
-        margin: 60px auto;
-    }
-
-
-    .intro {
-        background: white;
-        padding: 35px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    .intro h2 {
-        color: #1e3a8a;
-        margin-bottom: 15px;
-        font-size: 30px;
-    }
-
-    .intro p {
-        line-height: 1.7;
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-    .tagline {
-        color: #6b7280;
-        font-size: 14px;
-    }
-
-    .section {
-        background: white;
-        padding: 35px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        margin-bottom: 30px;
-    }
-
-    .section h2 {
-        font-size: 22px;
-        color: #1e3a8a;
-        margin-bottom: 20px;
-        border-bottom: 2px solid #2563eb;
-        padding-bottom: 8px;
-    }
-
-    .tips-list,
-    .interview-list {
-        padding-left: 25px;
-        line-height: 1.7;
-    }
-
-    .tips-list li,
-    .interview-list li {
-        margin-bottom: 10px;
-    }
-
-    code {
-        background: #e5e7eb;
-        padding: 3px 6px;
-        border-radius: 4px;
-        color: #111827;
-    }
-
-    .table-wrapper {
-        overflow-x: auto;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 14px;
-    }
-
-    th {
-        background: #eff6ff;
-        color: #1e3a8a;
-        text-align: left;
-        font-weight: bold;
-    }
-
-    th,
-    td {
-        border: 1px solid #d1d5db;
-        padding: 12px;
-        vertical-align: top;
-    }
-
-    tr:hover {
-        background: #f8fafc;
-    }
-
-
-    /* =========================
-       IMPORTANT BOX
-    ========================= */
-
-    .important {
-        background: #fef3c7;
-        border-left: 5px solid #f59e0b;
-        padding: 15px;
-        margin-top: 20px;
-        line-height: 1.6;
-    }
-
-
-    /* =========================
-       CHECKLIST
-    ========================= */
-
-    .checklist {
-        background: #dbeafe;
-        border-left: 5px solid #2563eb;
-        padding: 18px;
-        line-height: 1.7;
-        border-radius: 5px;
-    }
-
-
-    /* =========================
-       JOB SECTION
-    ========================= */
-
-    .jobs-section {
-        margin-top: 50px;
-    }
-
-    .jobs-section h2 {
-        text-align: center;
-        color: #1e3a8a;
-        font-size: 32px;
-        margin-bottom: 10px;
-    }
-
-    .jobs-description {
-        text-align: center;
-        color: #6b7280;
-        margin-bottom: 30px;
-    }
-
-    #jobGrid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 15px;
-    }
-
-    .job-card {
-        min-height: 150px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        font-size: 15px;
-        color: white;
-        font-weight: bold;
-        text-align: center;
-        line-height: 1.4;
-        text-decoration: none;
-        cursor: pointer;
-        transition: 0.3s;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-
-    .job-card:hover {
-        transform: translateY(-5px);
-        opacity: 0.9;
-        box-shadow: 0 7px 18px rgba(0,0,0,0.15);
-    }
-
-
-    /* =========================
-       DISCLAIMER
-    ========================= */
-
-    .disclaimer {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        margin-top: 40px;
-        text-align: center;
-        color: #6b7280;
-        line-height: 1.6;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-        margin-top: 60px;
-        background: #111827;
-        color: white;
-        text-align: center;
-        padding: 30px;
-    }
-
-    footer p {
-        margin-bottom: 8px;
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 768px) {
-
-        nav {
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        nav ul {
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .hero h1 {
-            font-size: 35px;
-        }
-
-        .hero p {
-            font-size: 17px;
-        }
-
-        .container {
-            width: 92%;
-            margin: 40px auto;
-        }
-
-        .section,
-        .intro {
-            padding: 25px;
-        }
-
-        #jobGrid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .job-card {
-            min-height: 130px;
-            font-size: 13px;
-            padding: 12px;
-        }
-
-    }
-
-    @media (max-width: 480px) {
-
-        #jobGrid {
-            grid-template-columns: 1fr;
-        }
-
-        .job-card {
-            min-height: 100px;
-        }
-
-    }
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f7fb;color:#333}
+nav{background:white;display:flex;justify-content:space-between;align-items:center;padding:20px 8%;box-shadow:0 2px 10px rgba(0,0,0,0.08);position:sticky;top:0;z-index:20}
+.logo{font-size:28px;font-weight:bold;color:#2563eb}
+nav ul{list-style:none;display:flex;gap:30px}
+nav ul li a{text-decoration:none;color:#333;font-weight:500}
+nav ul li a:hover{color:#2563eb}
+.hero{background:#2563eb;color:white;text-align:center;padding:70px 20px}
+.hero h1{font-size:45px;margin-bottom:15px}
+.hero p{font-size:19px}
+.container{width:85%;max-width:1100px;margin:60px auto}
+.intro{background:white;padding:35px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.08);text-align:center;margin-bottom:40px}
+.intro h2{color:#1e3a8a;margin-bottom:15px;font-size:30px}
+.intro p{line-height:1.7;font-size:16px;margin-bottom:10px}
+.section{background:white;padding:35px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.08);margin-bottom:30px}
+.section h2{font-size:22px;color:#1e3a8a;margin-bottom:20px;border-bottom:2px solid #2563eb;padding-bottom:8px}
+.tips-list,.interview-list{padding-left:25px;line-height:1.7}
+.tips-list li,.interview-list li{margin-bottom:10px}
+code{background:#e5e7eb;padding:3px 6px;border-radius:4px;color:#111827}
+.table-wrapper{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:#eff6ff;color:#1e3a8a;text-align:left;font-weight:bold}
+th,td{border:1px solid #d1d5db;padding:12px;vertical-align:top}
+tr:hover{background:#f8fafc}
+.important{background:#fef3c7;border-left:5px solid #f59e0b;padding:15px;margin-top:20px;line-height:1.6}
+.checklist{background:#dbeafe;border-left:5px solid #2563eb;padding:18px;line-height:1.7;border-radius:5px}
+.disclaimer{background:white;padding:25px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.06);margin-top:40px;text-align:center;color:#6b7280;line-height:1.6}
+footer{margin-top:60px;background:#111827;color:white;text-align:center;padding:30px}
+.jobs-section{margin-top:50px;background:white;padding:35px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.08)}
+.jobs-section h2{text-align:center;color:#1e3a8a;font-size:32px;margin-bottom:10px}
+.jobs-description{text-align:center;color:#6b7280;margin-bottom:25px}
+.controls{display:flex;gap:12px;flex-wrap:wrap;background:#f8fafc;padding:18px;border-radius:12px;margin-bottom:20px;border:1px solid #e5e7eb}
+.controls input,.controls select{padding:13px 15px;border:1px solid #d6dce7;border-radius:9px;font-size:15px;outline:none}
+.controls input{flex:1;min-width:230px}
+.controls select{min-width:170px}
+.count{margin:10px 0 20px;font-weight:bold;color:#526078}
+.jobs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.job-card{position:relative;background:#fff;border:1px solid #e3e8f0;border-radius:15px;padding:22px;min-height:245px;box-shadow:0 4px 14px rgba(20,40,80,.06);transition:.2s;text-align:left}
+.job-card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(20,40,80,.12)}
+.job-number{position:absolute;right:16px;top:14px;color:#a4afc0;font-size:12px;font-weight:bold}
+.source{display:inline-block;background:#eef4ff;color:#1859a5;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:bold;margin-bottom:15px}
+.job-card h3{font-size:20px;margin-bottom:12px;padding-right:35px;color:#172033}
+.location{color:#536176;margin-bottom:12px;font-size:14px}
+.note{font-size:13px;color:#7a8597;margin-bottom:20px}
+.apply{display:inline-block;text-decoration:none;background:#165dab;color:#fff;padding:11px 17px;border-radius:8px;font-weight:bold}
+.apply:hover{background:#0e4586}
+.empty{text-align:center;padding:50px;background:#f8fafc;border-radius:14px;color:#687386;display:none;margin-top:20px}
+@media(max-width:768px){nav{flex-direction:column;gap:15px}nav ul{gap:15px;flex-wrap:wrap;justify-content:center}.hero h1{font-size:35px}.container{width:92%}.section,.intro,.jobs-section{padding:25px}.jobs{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav>
-
-    <div class="logo">
-        Linking You
-    </div>
-
-    <ul>
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-
-        <li>
-            <a href="about.html">About</a>
-        </li>
-
-        <li>
-            <a href="contact.html">Contact</a>
-        </li>
-    </ul>
-
+<div class="logo">Linking You</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="jobs.html">Jobs</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
 </nav>
-
 <section class="hero">
-
-    <h1>LinkingJob</h1>
-
-    <p>
-        Connecting job seekers with opportunities across South Africa.
-    </p>
-
+<h1>LinkingJob</h1>
+<p>Connecting job seekers with opportunities across South Africa.</p>
 </section>
-
-
 <main class="container">
-
-
-    <!-- =========================
-         INTRO
-    ========================= -->
-
-    <section class="intro">
-
-        <h2>Job Recommendations For You</h2>
-
-        <p>
-            Find useful job opportunities, career advice and practical
-            tips to help you improve your chances of getting hired.
-        </p>
-
-        <p class="tagline">
-            Connect • Empowerment • Growth
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         JOB HUNTING
-    ========================= -->
-
-    <section class="section">
-
-        <h2>1. Job Hunting Tips</h2>
-
-        <ul class="tips-list">
-
-            <li>
-                <strong>Apply fast:</strong>
-                Applying soon after a job is posted can improve your
-                chances of being noticed by recruiters.
-            </li>
-
-            <li>
-                <strong>Use multiple platforms:</strong>
-                Search across platforms such as Indeed, Careers24 and
-                LinkedIn to find more opportunities.
-            </li>
-
-            <li>
-                <strong>Location matters:</strong>
-                Make sure your CV clearly shows your location and consider
-                the distance between you and the workplace.
-            </li>
-
-            <li>
-                <strong>Keywords matter:</strong>
-                Include relevant keywords from the job advertisement,
-                such as "data capture", "MS Excel" or "filing".
-            </li>
-
-            <li>
-                <strong>Use a professional file name:</strong>
-                Save your CV as:
-                <code>Name_Surname_Admin_CV.pdf</code>
-            </li>
-
-            <li>
-                <strong>Follow up:</strong>
-                If appropriate, follow up after applying and politely
-                express your interest in the position.
-            </li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- =========================
-         CV WRITING
-    ========================= -->
-
-    <section class="section">
-
-        <h2>2. CV Writing: Private vs Public Posts</h2>
-
-        <div class="table-wrapper">
-
-            <table>
-
-                <tr>
-
-                    <th>Type</th>
-                    <th>What it means</th>
-                    <th>CV changes to make</th>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        <strong>Private Company</strong>
-                    </td>
-
-                    <td>
-                        Businesses such as retail, banking and
-                        telecommunications companies.
-                    </td>
-
-                    <td>
-                        Keep the CV concise. Focus on relevant skills,
-                        achievements and experience. Use action words such
-                        as "Increased", "Saved" and "Processed".
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        <strong>Government / Public</strong>
-                    </td>
-
-                    <td>
-                        Government departments, municipalities and
-                        public institutions.
-                    </td>
-
-                    <td>
-                        Follow the requirements in the vacancy
-                        advertisement carefully and provide all requested
-                        documentation.
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        <strong>NGO / NPO</strong>
-                    </td>
-
-                    <td>
-                        Organisations focused on social, community or
-                        development objectives.
-                    </td>
-
-                    <td>
-                        Highlight volunteering, community involvement,
-                        relevant skills and your ability to contribute
-                        to the organisation's mission.
-                    </td>
-
-                </tr>
-
-            </table>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         CAREER TYPES
-    ========================= -->
-
-    <section class="section">
-
-        <h2>3. Internship vs Apprenticeship vs Learnership vs Junior Role</h2>
-
-        <div class="table-wrapper">
-
-            <table>
-
-                <tr>
-
-                    <th>Type</th>
-                    <th>For who?</th>
-                    <th>Qualification</th>
-                    <th>Output</th>
-                    <th>Pay</th>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        <strong>Internship</strong>
-                    </td>
-
-                    <td>
-                        Graduates and students gaining practical
-                        workplace experience.
-                    </td>
-
-                    <td>
-                        Usually diploma, degree or relevant qualification,
-                        depending on the programme.
-                    </td>
-
-                    <td>
-                        Practical work experience.
-                    </td>
-
-                    <td>
-                        Usually a stipend.
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        <strong>Apprenticeship</strong>
-                    </td>
-
-                    <td>
-                        People training for skilled trades such as
-                        plumbing, electrical work or mechanical trades.
-                    </td>
-
-                    <td>
-                        Requirements depend on the trade and programme.
-                    </td>
-
-                    <td>
-                        Practical training and, where applicable,
-                        trade certification.
-                    </td>
-
-                    <td>
-                        Usually an allowance or wage.
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        <strong>Learnership</strong>
-                    </td>
-
-                    <td>
-                        People who want structured workplace and
-                        theoretical training.
-                    </td>
-
-                    <td>
-                        Requirements vary according to the specific
-                        learnership.
-                    </td>
-
-                    <td>
-                        Workplace experience and an applicable
-                        qualification or certificate.
-                    </td>
-
-                    <td>
-                        Usually a stipend.
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        <strong>Junior Position</strong>
-                    </td>
-
-                    <td>
-                        People starting their professional career.
-                    </td>
-
-                    <td>
-                        Depends on the employer and position.
-                    </td>
-
-                    <td>
-                        Employment and professional experience.
-                    </td>
-
-                    <td>
-                        Salary.
-                    </td>
-
-                </tr>
-
-            </table>
-
-        </div>
-
-
-        <div class="important">
-
-            <strong>Important:</strong>
-
-            Always read the specific vacancy requirements before applying.
-            Do not remove qualifications from your CV simply because a
-            position is a learnership. If the advertisement has specific
-            eligibility requirements, make sure your application complies
-            with them.
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         INTERVIEW TIPS
-    ========================= -->
-
-    <section class="section">
-
-        <h2>4. Interview Tips That Work</h2>
-
-        <ol class="interview-list">
-
-            <li>
-                <strong>Before:</strong>
-                Research the company and understand what they do.
-            </li>
-
-            <li>
-                <strong>Dress:</strong>
-                Wear clean, appropriate and professional clothing.
-            </li>
-
-            <li>
-                <strong>STAR method:</strong>
-                For experience-based questions, structure your answer
-                around Situation, Task, Action and Result.
-            </li>
-
-            <li>
-                <strong>Weakness question:</strong>
-                Mention a genuine weakness and explain what you are doing
-                to improve it.
-            </li>
-
-            <li>
-                <strong>Ask questions:</strong>
-                Prepare questions such as:
-                "What does success look like in the first six months?"
-            </li>
-
-            <li>
-                <strong>After:</strong>
-                Send a short thank-you message after the interview.
-            </li>
-
-        </ol>
-
-    </section>
-
-
-    <!-- =========================
-         FINAL CHECKLIST
-    ========================= -->
-
-    <section class="section">
-
-        <div class="checklist">
-
-            <strong>
-                Final checklist before you send any application:
-            </strong>
-
-            <br><br>
-
-            1. Does my CV match the requirements of the job?
-
-            <br>
-
-            2. Did I include relevant keywords from the advertisement?
-
-            <br>
-
-            3. Is my email address professional?
-
-            <br>
-
-            4. Did I check spelling and grammar?
-
-            <br>
-
-            5. Did I attach the correct CV and supporting documents?
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         JOB RECOMMENDATIONS
-    ========================= -->
-
-    <section class="jobs-section">
-
-        <h2>Latest Job Recommendations</h2>
-
-        <p class="jobs-description">
-            Click a job card to search for the opportunity on its
-            respective platform.
-        </p>
-
-        <div id="jobGrid"></div>
-
-    </section>
-
-
-    <!-- =========================
-         DISCLAIMER
-    ========================= -->
-
-    <section class="disclaimer">
-
-        <p>
-            <strong>Job Listing Notice</strong>
-        </p>
-
-        <p>
-            The jobs listed on LinkingJob are sourced from internet
-            third-party platforms and job agents. LinkingJob does not
-            guarantee employment and applicants should verify job details
-            directly with the relevant employer or job platform before
-            applying.
-        </p>
-
-    </section>
-
+<section class="intro">
+<h2>Job Recommendations For You</h2>
+<p>Find useful job opportunities, career advice and practical tips to help you improve your chances of getting hired.</p>
+<p class="tagline">Connect • Empowerment • Growth</p>
+</section>
+<section class="section"><h2>1. Job Hunting Tips</h2><ul class="tips-list"><li><strong>Apply fast:</strong> Applying soon after a job is posted can improve your chances.</li><li><strong>Use multiple platforms:</strong> Indeed, Careers24 and LinkedIn.</li><li><strong>Location matters:</strong> CV must show your location.</li><li><strong>Keywords matter:</strong> Include "data capture", "MS Excel" or "filing".</li><li><strong>Use a professional file name:</strong> <code>Name_Surname_Admin_CV.pdf</code></li><li><strong>Follow up:</strong> Politely express interest after applying.</li></ul></section>
+<section class="section"><h2>2. CV Writing: Private vs Public Posts</h2><div class="table-wrapper"><table><tr><th>Type</th><th>What it means</th><th>CV changes</th></tr><tr><td><strong>Private Company</strong></td><td>Retail, banking, telcos</td><td>Concise, achievements, action words</td></tr><tr><td><strong>Government / Public</strong></td><td>Departments, municipalities</td><td>Follow vacancy requirements</td></tr><tr><td><strong>NGO / NPO</strong></td><td>Social/community</td><td>Highlight volunteering</td></tr></table></div></section>
+<section class="section"><h2>3. Internship vs Apprenticeship vs Learnership vs Junior Role</h2><div class="table-wrapper"><table><tr><th>Type</th><th>For who?</th><th>Qualification</th><th>Output</th><th>Pay</th></tr><tr><td><strong>Internship</strong></td><td>Graduates</td><td>Diploma/Degree</td><td>Experience</td><td>Stipend</td></tr><tr><td><strong>Apprenticeship</strong></td><td>Trades</td><td>Trade dep</td><td>Certification</td><td>Allowance</td></tr><tr><td><strong>Learnership</strong></td><td>Structured</td><td>Varies</td><td>Qualification</td><td>Stipend</td></tr><tr><td><strong>Junior Position</strong></td><td>Starting</td><td>Depends</td><td>Employment</td><td>Salary</td></tr></table></div><div class="important"><strong>Important:</strong> Always read vacancy requirements before applying.</div></section>
+<section class="section"><h2>4. Interview Tips That Work</h2><ol class="interview-list"><li><strong>Before:</strong> Research company</li><li><strong>Dress:</strong> Professional</li><li><strong>STAR:</strong> Situation, Task, Action, Result</li><li><strong>Weakness:</strong> Genuine + improvement</li><li><strong>Ask:</strong> What does success look like in 6 months?</li><li><strong>After:</strong> Thank-you message</li></ol></section>
+<section class="section"><div class="checklist"><strong>Final checklist:</strong><br><br>1. CV matches requirements?<br>2. Keywords included?<br>3. Professional email?<br>4. Spelling checked?<br>5. Correct documents attached?</div></section>
+
+<section class="jobs-section" id="jobs">
+<h2>Latest Job Opportunities - 100 Listings</h2>
+<p class="jobs-description">Click View Jobs to search on original platform.</p>
+<div class="controls">
+<input id="search" type="search" placeholder="Search jobs, skills or locations...">
+<select id="source"><option value="all">All sources</option><option value="indeed">Indeed</option><option value="linkedin">LinkedIn</option><option value="careers24">Careers24</option><option value="pnet">PNet</option></select>
+<select id="location"><option value="all">All locations</option><option value="johannesburg">Johannesburg</option><option value="gauteng">Gauteng</option><option value="south africa">South Africa</option></select>
+</div>
+<div class="count" id="count">Showing 100 opportunities</div>
+<div class="jobs" id="jobsContainer">
+<article class="job-card" data-title="software developer" data-location="johannesburg" data-source="indeed"><div class="job-number">#001</div><div class="source">Indeed</div><h3>Software Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs-in-Johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="web developer" data-location="johannesburg" data-source="indeed"><div class="job-number">#002</div><div class="source">Indeed</div><h3>Web Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=web+developer&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="junior software developer" data-location="johannesburg" data-source="indeed"><div class="job-number">#003</div><div class="source">Indeed</div><h3>Junior Software Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=junior+software+developer&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="it support technician" data-location="johannesburg" data-source="indeed"><div class="job-number">#004</div><div class="source">Indeed</div><h3>IT Support Technician</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=IT+support&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="data analyst" data-location="johannesburg" data-source="indeed"><div class="job-number">#005</div><div class="source">Indeed</div><h3>Data Analyst</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=data+analyst&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="business analyst" data-location="johannesburg" data-source="indeed"><div class="job-number">#006</div><div class="source">Indeed</div><h3>Business Analyst</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=business+analyst&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="systems administrator" data-location="johannesburg" data-source="indeed"><div class="job-number">#007</div><div class="source">Indeed</div><h3>Systems Administrator</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=systems+administrator&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="network technician" data-location="johannesburg" data-source="indeed"><div class="job-number">#008</div><div class="source">Indeed</div><h3>Network Technician</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=network+technician&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="cybersecurity analyst" data-location="johannesburg" data-source="indeed"><div class="job-number">#009</div><div class="source">Indeed</div><h3>Cybersecurity Analyst</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=cybersecurity+analyst&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="database administrator" data-location="johannesburg" data-source="indeed"><div class="job-number">#010</div><div class="source">Indeed</div><h3>Database Administrator</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=database+administrator&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="frontend developer" data-location="johannesburg" data-source="indeed"><div class="job-number">#011</div><div class="source">Indeed</div><h3>Frontend Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=frontend+developer&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="backend developer" data-location="johannesburg" data-source="indeed"><div class="job-number">#012</div><div class="source">Indeed</div><h3>Backend Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=backend+developer&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="full stack developer" data-location="johannesburg" data-source="indeed"><div class="job-number">#013</div><div class="source">Indeed</div><h3>Full Stack Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=full+stack+developer&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="react developer" data-location="johannesburg" data-source="indeed"><div class="job-number">#014</div><div class="source">Indeed</div><h3>React Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=react+developer&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="java developer" data-location="johannesburg" data-source="indeed"><div class="job-number">#015</div><div class="source">Indeed</div><h3>Java Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=java+developer&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="python developer" data-location="johannesburg" data-source="indeed"><div class="job-number">#016</div><div class="source">Indeed</div><h3>Python Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=python+developer&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="cloud engineer" data-location="johannesburg" data-source="indeed"><div class="job-number">#017</div><div class="source">Indeed</div><h3>Cloud Engineer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=cloud+engineer&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="devops engineer" data-location="johannesburg" data-source="indeed"><div class="job-number">#018</div><div class="source">Indeed</div><h3>DevOps Engineer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=devops+engineer&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="qa tester" data-location="johannesburg" data-source="indeed"><div class="job-number">#019</div><div class="source">Indeed</div><h3>QA Tester</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=QA+tester&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="technical support" data-location="johannesburg" data-source="indeed"><div class="job-number">#020</div><div class="source">Indeed</div><h3>Technical Support</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=technical+support&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="graduate trainee" data-location="johannesburg" data-source="indeed"><div class="job-number">#021</div><div class="source">Indeed</div><h3>Graduate Trainee</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=graduate+trainee&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="it internship" data-location="johannesburg" data-source="indeed"><div class="job-number">#022</div><div class="source">Indeed</div><h3>IT Internship</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=IT+internship&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="finance internship" data-location="johannesburg" data-source="indeed"><div class="job-number">#023</div><div class="source">Indeed</div><h3>Finance Internship</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=finance+internship&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="administrative assistant" data-location="johannesburg" data-source="indeed"><div class="job-number">#024</div><div class="source">Indeed</div><h3>Administrative Assistant</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=administrative+assistant&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="customer service" data-location="johannesburg" data-source="indeed"><div class="job-number">#025</div><div class="source">Indeed</div><h3>Customer Service</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Indeed</p><a class="apply" href="https://za.indeed.com/jobs?q=customer+service&l=Johannesburg%2C+Gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="software developer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#026</div><div class="source">LinkedIn</div><h3>Software Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/jobs-in-johannesburg-area-south-africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="web developer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#027</div><div class="source">LinkedIn</div><h3>Web Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Web%20Developer&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="junior software developer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#028</div><div class="source">LinkedIn</div><h3>Junior Software Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Junior%20Software%20Developer&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="it support" data-location="johannesburg" data-source="linkedin"><div class="job-number">#029</div><div class="source">LinkedIn</div><h3>IT Support</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=IT%20Support&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="data analyst" data-location="johannesburg" data-source="linkedin"><div class="job-number">#030</div><div class="source">LinkedIn</div><h3>Data Analyst</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Data%20Analyst&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="business analyst" data-location="johannesburg" data-source="linkedin"><div class="job-number">#031</div><div class="source">LinkedIn</div><h3>Business Analyst</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Business%20Analyst&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="systems administrator" data-location="johannesburg" data-source="linkedin"><div class="job-number">#032</div><div class="source">LinkedIn</div><h3>Systems Administrator</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Systems%20Administrator&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="network technician" data-location="johannesburg" data-source="linkedin"><div class="job-number">#033</div><div class="source">LinkedIn</div><h3>Network Technician</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Network%20Technician&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="cybersecurity analyst" data-location="johannesburg" data-source="linkedin"><div class="job-number">#034</div><div class="source">LinkedIn</div><h3>Cybersecurity Analyst</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Cybersecurity%20Analyst&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="database administrator" data-location="johannesburg" data-source="linkedin"><div class="job-number">#035</div><div class="source">LinkedIn</div><h3>Database Administrator</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Database%20Administrator&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="frontend developer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#036</div><div class="source">LinkedIn</div><h3>Frontend Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Frontend%20Developer&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="backend developer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#037</div><div class="source">LinkedIn</div><h3>Backend Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Backend%20Developer&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="full stack developer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#038</div><div class="source">LinkedIn</div><h3>Full Stack Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Full%20Stack%20Developer&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="react developer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#039</div><div class="source">LinkedIn</div><h3>React Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=React%20Developer&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="java developer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#040</div><div class="source">LinkedIn</div><h3>Java Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Java%20Developer&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="python developer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#041</div><div class="source">LinkedIn</div><h3>Python Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Python%20Developer&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="cloud engineer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#042</div><div class="source">LinkedIn</div><h3>Cloud Engineer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Cloud%20Engineer&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="devops engineer" data-location="johannesburg" data-source="linkedin"><div class="job-number">#043</div><div class="source">LinkedIn</div><h3>DevOps Engineer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=DevOps%20Engineer&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="qa tester" data-location="johannesburg" data-source="linkedin"><div class="job-number">#044</div><div class="source">LinkedIn</div><h3>QA Tester</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=QA%20Tester&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="graduate trainee" data-location="johannesburg" data-source="linkedin"><div class="job-number">#045</div><div class="source">LinkedIn</div><h3>Graduate Trainee</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/latest-jobs-johannesburg-metropolitan-area" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="it internship" data-location="johannesburg" data-source="linkedin"><div class="job-number">#046</div><div class="source">LinkedIn</div><h3>IT Internship</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=IT%20Internship&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="finance internship" data-location="johannesburg" data-source="linkedin"><div class="job-number">#047</div><div class="source">LinkedIn</div><h3>Finance Internship</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Finance%20Internship&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="administrative assistant" data-location="johannesburg" data-source="linkedin"><div class="job-number">#048</div><div class="source">LinkedIn</div><h3>Administrative Assistant</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Administrative%20Assistant&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="customer service" data-location="johannesburg" data-source="linkedin"><div class="job-number">#049</div><div class="source">LinkedIn</div><h3>Customer Service</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/search/?keywords=Customer%20Service&location=Johannesburg%2C%20Gauteng%2C%20South%20Africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="data scientist" data-location="johannesburg" data-source="linkedin"><div class="job-number">#050</div><div class="source">LinkedIn</div><h3>Data Scientist</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/gauteng-jobs" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="project manager" data-location="johannesburg" data-source="linkedin"><div class="job-number">#051</div><div class="source">LinkedIn</div><h3>Project Manager</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on LinkedIn</p><a class="apply" href="https://za.linkedin.com/jobs/jobs-in-city-of-johannesburg-metropolitan-municipality" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="general jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#052</div><div class="source">Careers24</div><h3>General Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/se-general/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="it jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#053</div><div class="source">Careers24</div><h3>IT Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-it/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="software developer" data-location="johannesburg" data-source="careers24"><div class="job-number">#054</div><div class="source">Careers24</div><h3>Software Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-software/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="web developer" data-location="johannesburg" data-source="careers24"><div class="job-number">#055</div><div class="source">Careers24</div><h3>Web Developer</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-web/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="data analyst" data-location="johannesburg" data-source="careers24"><div class="job-number">#056</div><div class="source">Careers24</div><h3>Data Analyst</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-data/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="business analyst" data-location="johannesburg" data-source="careers24"><div class="job-number">#057</div><div class="source">Careers24</div><h3>Business Analyst</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-business/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="recruitment jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#058</div><div class="source">Careers24</div><h3>Recruitment Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-recruiter/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="pnet jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#059</div><div class="source">Careers24</div><h3>PNet Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-pnet/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="finance jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#060</div><div class="source">Careers24</div><h3>Finance Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-finance/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="accounting jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#061</div><div class="source">Careers24</div><h3>Accounting Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-accounting/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="marketing jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#062</div><div class="source">Careers24</div><h3>Marketing Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-marketing/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="sales jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#063</div><div class="source">Careers24</div><h3>Sales Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-sales/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="admin jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#064</div><div class="source">Careers24</div><h3>Admin Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-admin/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="hr jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#065</div><div class="source">Careers24</div><h3>HR Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-hr/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="engineering jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#066</div><div class="source">Careers24</div><h3>Engineering Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-engineering/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="project manager" data-location="johannesburg" data-source="careers24"><div class="job-number">#067</div><div class="source">Careers24</div><h3>Project Manager</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-project/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="procurement jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#068</div><div class="source">Careers24</div><h3>Procurement Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-procurement/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="supply chain jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#069</div><div class="source">Careers24</div><h3>Supply Chain Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-supply/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="healthcare jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#070</div><div class="source">Careers24</div><h3>Healthcare Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-health/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="graduate jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#071</div><div class="source">Careers24</div><h3>Graduate Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-graduate/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="internship jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#072</div><div class="source">Careers24</div><h3>Internship Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-internship/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="remote jobs" data-location="south africa" data-source="careers24"><div class="job-number">#073</div><div class="source">Careers24</div><h3>Remote Jobs</h3><p class="location">📍 South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="quantitative analyst" data-location="johannesburg" data-source="careers24"><div class="job-number">#074</div><div class="source">Careers24</div><h3>Quantitative Analyst</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-r-/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="demand jobs" data-location="johannesburg" data-source="careers24"><div class="job-number">#075</div><div class="source">Careers24</div><h3>Demand Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on Careers24</p><a class="apply" href="https://www.careers24.com/jobs/lc-johannesburg/kw-demand/" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="all johannesburg jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#076</div><div class="source">PNet</div><h3>All Johannesburg Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="it jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#077</div><div class="source">PNet</div><h3>IT Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/information-technology/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="all jobs johannesburg" data-location="johannesburg" data-source="pnet"><div class="job-number">#078</div><div class="source">PNet</div><h3>All Jobs Johannesburg</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/all/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="jobs johannesburg gauteng" data-location="johannesburg" data-source="pnet"><div class="job-number">#079</div><div class="source">PNet</div><h3>Jobs Johannesburg Gauteng</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/in-johannesburg_gauteng_south-africa" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="johannesburg south jobs" data-location="johannesburg south" data-source="pnet"><div class="job-number">#080</div><div class="source">PNet</div><h3>Johannesburg South Jobs</h3><p class="location">📍 Johannesburg South</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/in-johannesburg-south" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="gauteng jobs" data-location="gauteng" data-source="pnet"><div class="job-number">#081</div><div class="source">PNet</div><h3>Gauteng Jobs</h3><p class="location">📍 Gauteng, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/in-gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="jhb jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#082</div><div class="source">PNet</div><h3>JHB Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/in-jhb_gauteng" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="software jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#083</div><div class="source">PNet</div><h3>Software Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/software/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="developer jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#084</div><div class="source">PNet</div><h3>Developer Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/developer/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="data jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#085</div><div class="source">PNet</div><h3>Data Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/data/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="finance jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#086</div><div class="source">PNet</div><h3>Finance Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/finance/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="accounting jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#087</div><div class="source">PNet</div><h3>Accounting Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/accounting/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="sales jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#088</div><div class="source">PNet</div><h3>Sales Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/sales/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="admin jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#089</div><div class="source">PNet</div><h3>Admin Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/administration/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="engineering jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#090</div><div class="source">PNet</div><h3>Engineering Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/engineering/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="marketing jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#091</div><div class="source">PNet</div><h3>Marketing Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/marketing/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="human resources jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#092</div><div class="source">PNet</div><h3>Human Resources Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/human-resources/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="internship jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#093</div><div class="source">PNet</div><h3>Internship Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/internship/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="graduate jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#094</div><div class="source">PNet</div><h3>Graduate Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/graduate/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="remote jobs" data-location="south africa" data-source="pnet"><div class="job-number">#095</div><div class="source">PNet</div><h3>Remote Jobs</h3><p class="location">📍 South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/remote" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="customer service jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#096</div><div class="source">PNet</div><h3>Customer Service Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/customer-service/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="project manager jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#097</div><div class="source">PNet</div><h3>Project Manager Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/project-manager/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="network jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#098</div><div class="source">PNet</div><h3>Network Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/network/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="cybersecurity jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#099</div><div class="source">PNet</div><h3>Cybersecurity Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/cybersecurity/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+<article class="job-card" data-title="business analyst jobs" data-location="johannesburg" data-source="pnet"><div class="job-number">#100</div><div class="source">PNet</div><h3>Business Analyst Jobs</h3><p class="location">📍 Johannesburg, South Africa</p><p class="note">External listing/search • Apply on PNet</p><a class="apply" href="https://www.pnet.co.za/jobs/business-analyst/in-johannesburg" target="_blank">View Jobs ↗</a></article>
+</div>
+<div class="empty" id="empty">No matching opportunities found.</div>
+</section>
+<section class="disclaimer"><p><strong>Job Listing Notice</strong></p><p>The jobs listed are sourced from third-party platforms. Verify details directly with employer before applying.</p></section>
 </main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <p>
-        &copy; 2026 LinkingJob. All Rights Reserved.
-    </p>
-
-    <p>
-        Connecting People with Opportunities.
-    </p>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
+<footer><p>&copy; 2026 LinkingJob. All Rights Reserved.</p><p>Connecting People with Opportunities.</p></footer>
 <script>
-
-    const sources = {
-
-        "Indeed": "https://za.indeed.com",
-
-        "Careers24": "https://www.careers24.com",
-
-        "Reddit": "https://www.reddit.com"
-
-    };
-
-
-    const jobs = [
-
-        {
-            name: "Receptionist — Amrod (Johannesburg)",
-            color: "#3b82f6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Human Resource Admin Clerk — Ekurhuleni West TVET College",
-            color: "#3b82f6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Print & Admin Store Assistant — MLG Recruitment",
-            color: "#3b82f6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Administrative Internship — Ekurhuleni West TVET College",
-            color: "#3b82f6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Conveyancing Secretary — Sandton",
-            color: "#3b82f6",
-            src: "Careers24"
-        },
-
-        {
-            name: "Office Support Assistant — Johannesburg CBD",
-            color: "#3b82f6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Data Capture Clerk — Johannesburg",
-            color: "#3b82f6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Filing Clerk — Johannesburg",
-            color: "#3b82f6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Digital Customer Service Rep — Luxity",
-            color: "#10b981",
-            src: "Indeed"
-        },
-
-        {
-            name: "Customer Service Rep — Moladira Skills (Sandton)",
-            color: "#10b981",
-            src: "Indeed"
-        },
-
-        {
-            name: "Call Centre Manager — Johannesburg CBD",
-            color: "#10b981",
-            src: "Careers24"
-        },
-
-        {
-            name: "Client Relationship Specialist / Paraplanner",
-            color: "#10b981",
-            src: "Careers24"
-        },
-
-        {
-            name: "Retail Service Advisor — Gauteng",
-            color: "#10b981",
-            src: "Indeed"
-        },
-
-        {
-            name: "Online Sales Support Agent",
-            color: "#10b981",
-            src: "Indeed"
-        },
-
-        {
-            name: "CRM Support Assistant",
-            color: "#10b981",
-            src: "Indeed"
-        },
-
-        {
-            name: "Customer Complaints Coordinator",
-            color: "#10b981",
-            src: "Indeed"
-        },
-
-        {
-            name: "Junior FMCG Sales Representative",
-            color: "#f59e0b",
-            src: "Careers24"
-        },
-
-        {
-            name: "Sales Generator — Foot Gear SA",
-            color: "#f59e0b",
-            src: "Indeed"
-        },
-
-        {
-            name: "Entry Level Marketing Assistant — ML Direct Marketing",
-            color: "#f59e0b",
-            src: "Indeed"
-        },
-
-        {
-            name: "Retail Store Assistant — East Rand",
-            color: "#f59e0b",
-            src: "Indeed"
-        },
-
-        {
-            name: "Wellness Assistant — Clicks Group",
-            color: "#f59e0b",
-            src: "Indeed"
-        },
-
-        {
-            name: "Retail Merchandiser — Johannesburg",
-            color: "#f59e0b",
-            src: "Indeed"
-        },
-
-        {
-            name: "Telesales Consultant — Johannesburg CBD",
-            color: "#f59e0b",
-            src: "Careers24"
-        },
-
-        {
-            name: "Sales Consultant — Sandton",
-            color: "#f59e0b",
-            src: "Indeed"
-        },
-
-        {
-            name: "CNC Machinist — Johannesburg South",
-            color: "#ef4444",
-            src: "Careers24"
-        },
-
-        {
-            name: "Mechanical Draughtsman — Johannesburg South",
-            color: "#ef4444",
-            src: "Careers24"
-        },
-
-        {
-            name: "Welding Inspector QC — Johannesburg South",
-            color: "#ef4444",
-            src: "Careers24"
-        },
-
-        {
-            name: "Production Technician Internship — Procter & Gamble",
-            color: "#ef4444",
-            src: "Indeed"
-        },
-
-        {
-            name: "Metallurgical Eng Graduate — Steinmuller Africa",
-            color: "#ef4444",
-            src: "Indeed"
-        },
-
-        {
-            name: "Assembler – Production",
-            color: "#ef4444",
-            src: "Indeed"
-        },
-
-        {
-            name: "Telecoms Network Ops Learnership — Ericsson",
-            color: "#ef4444",
-            src: "Indeed"
-        },
-
-        {
-            name: "Chloroplat Operator — Tharisa Minerals",
-            color: "#ef4444",
-            src: "Indeed"
-        },
-
-        {
-            name: "Accountant / Bookkeeper",
-            color: "#8b5cf6",
-            src: "Reddit"
-        },
-
-        {
-            name: "Data Analyst — Johannesburg CBD",
-            color: "#8b5cf6",
-            src: "Careers24"
-        },
-
-        {
-            name: "Business Analyst — PSG Konsult",
-            color: "#8b5cf6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Junior Financial Administrator",
-            color: "#8b5cf6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Payroll Assistant — Johannesburg",
-            color: "#8b5cf6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Procurement Clerk — Gauteng",
-            color: "#8b5cf6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Creditors Clerk — Johannesburg",
-            color: "#8b5cf6",
-            src: "Indeed"
-        },
-
-        {
-            name: "Accounts Administrator — Sandton",
-            color: "#8b5cf6",
-            src: "Careers24"
-        },
-
-        {
-            name: "General Worker — Curro Holdings",
-            color: "#06b6d4",
-            src: "Indeed"
-        },
-
-        {
-            name: "Teacher Assistant — SPARK Schools",
-            color: "#06b6d4",
-            src: "Indeed"
-        },
-
-        {
-            name: "Management Internship — Ekurhuleni West TVET College",
-            color: "#06b6d4",
-            src: "Indeed"
-        },
-
-        {
-            name: "Range Officer — Midrand",
-            color: "#06b6d4",
-            src: "Careers24"
-        },
-
-        {
-            name: "Warehouse Assistant — Johannesburg",
-            color: "#06b6d4",
-            src: "Indeed"
-        },
-
-        {
-            name: "Driver Assistant — Gauteng",
-            color: "#06b6d4",
-            src: "Indeed"
-        },
-
-        {
-            name: "Security Officer — Johannesburg",
-            color: "#06b6d4",
-            src: "Reddit"
-        },
-
-        {
-            name: "Hospitality Assistant — Gauteng",
-            color: "#06b6d4",
-            src: "Reddit"
-        },
-
-        {
-            name: "Learnership — YES Programme",
-            color: "#06b6d4",
-            src: "Indeed"
-        },
-
-        {
-            name: "Youth Employment — Harambee",
-            color: "#06b6d4",
-            src: "Indeed"
-        }
-
-    ];
-
-
-    const grid = document.getElementById("jobGrid");
-
-
-    /*
-        Generate job cards.
-
-        The original website generated 200 cards.
-        This version keeps that behaviour.
-    */
-
-    for (let i = 0; i < 200; i++) {
-
-        const job = jobs[i % jobs.length];
-
-        const link = sources[job.src];
-
-
-        const card = document.createElement("a");
-
-        card.href = link;
-
-        card.target = "_blank";
-
-        card.rel = "noopener noreferrer";
-
-        card.className = "job-card";
-
-        card.style.background = job.color;
-
-        card.title = job.name + " • " + job.src;
-
-        card.textContent = job.name;
-
-
-        grid.appendChild(card);
-
-    }
-
+const search=document.getElementById('search');const source=document.getElementById('source');const locationFilter=document.getElementById('location');const count=document.getElementById('count');const empty=document.getElementById('empty');
+function filterJobs(){const cards=[...document.querySelectorAll('#jobsContainer .job-card')];const q=search.value.toLowerCase().trim();const s=source.value;const l=locationFilter.value;let shown=0;cards.forEach(card=>{const text=card.innerText.toLowerCase();const okQ=!q||text.includes(q);const okS=s==='all'||card.dataset.source===s;const okL=l==='all'||card.dataset.location.includes(l);const show=okQ&&okS&&okL;card.style.display=show?'':'none';if(show)shown++;});count.textContent=`Showing ${shown} opportunities`;empty.style.display=shown?'none':'block';}
+search.addEventListener('input',filterJobs);source.addEventListener('change',filterJobs);locationFilter.addEventListener('change',filterJobs);
 </script>
-```
-
 </body>
-
 </html>
